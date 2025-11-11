@@ -23,14 +23,14 @@ This tool continuously monitors Ceph OSD latencies and identifies problematic OS
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ceph-osd-latency-monitor.git
-cd ceph-osd-latency-monitor
+git clone https://github.com/lancealot/ceph_osd_latency.git
+cd ceph_osd_latency
 
 # Make the script executable
-chmod +x monitor_osd_latency.sh
+chmod +x osd_latency.sh
 
 # Run with default settings
-./monitor_osd_latency.sh
+./osd_latency.sh
 
 # Run with custom settings
 SAMPLE_COUNT=50 WARN_THRESHOLD=30 ./monitor_osd_latency.sh
@@ -48,23 +48,23 @@ SAMPLE_COUNT=50 WARN_THRESHOLD=30 ./monitor_osd_latency.sh
 ### Option 1: Direct Download
 
 ```bash
-wget https://raw.githubusercontent.com/yourusername/ceph-osd-latency-monitor/main/monitor_osd_latency.sh
-chmod +x monitor_osd_latency.sh
+wget https://raw.githubusercontent.com/lancealot/ceph_osd_latency/main/osd_latency.sh
+chmod +x osd_latency.sh
 ```
 
 ### Option 2: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/ceph-osd-latency-monitor.git
-cd ceph-osd-latency-monitor
-chmod +x monitor_osd_latency.sh
+git clone https://github.com/lancealot/ceph_osd_latency.git
+cd osd_latency
+chmod +x sd_latency.sh
 ```
 
 ### Option 3: System-wide Installation
 
 ```bash
-sudo cp monitor_osd_latency.sh /usr/local/bin/
-sudo chmod +x /usr/local/bin/monitor_osd_latency.sh
+sudo cp sd_latency.sh /usr/local/bin/
+sudo chmod +x /usr/local/bin/osd_latency.sh
 ```
 
 ## 📖 Usage
@@ -73,26 +73,26 @@ sudo chmod +x /usr/local/bin/monitor_osd_latency.sh
 
 ```bash
 # Monitor with default settings (20 samples, 5-second intervals)
-./monitor_osd_latency.sh
+./osd_latency.sh
 
 # Monitor continuously until Ctrl+C
-SAMPLE_COUNT=0 ./monitor_osd_latency.sh
+SAMPLE_COUNT=0 ./osd_latency.sh
 
 # Quick 1-minute assessment (12 samples, 5-second intervals)
-SAMPLE_COUNT=12 ./monitor_osd_latency.sh
+SAMPLE_COUNT=12 ./osd_latency.sh
 ```
 
 ### Advanced Usage
 
 ```bash
 # Monitor with aggressive thresholds for NVMe clusters
-WARN_THRESHOLD=20 CRIT_THRESHOLD=50 ./monitor_osd_latency.sh
+WARN_THRESHOLD=20 CRIT_THRESHOLD=50 ./osd_latency.sh
 
 # Long-term monitoring with less frequent sampling
-SAMPLE_INTERVAL=30 SAMPLE_COUNT=120 ./monitor_osd_latency.sh
+SAMPLE_INTERVAL=30 SAMPLE_COUNT=120 ./osd_latency.sh
 
 # Export results to a file
-./monitor_osd_latency.sh 2>&1 | tee osd_latency_report.txt
+./osd_latency.sh 2>&1 | tee osd_latency_report.txt
 ```
 
 ### Running as a Service
