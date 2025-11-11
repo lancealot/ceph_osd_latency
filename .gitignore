@@ -1,0 +1,33 @@
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Log files
+*.log
+osd_latency_report*.txt
+monitoring_output*.txt
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Test output
+test_output/
+test_results/
+
+# System files
+.directory
+Thumbs.db
+
+# Custom configuration files (keep templates)
+*.conf
+!*.conf.example
